@@ -1,0 +1,168 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: rgb(50, 42, 165);
+    color: white;
+}
+
+.container{
+    margin: auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+}
+
+input{
+    border: none;
+    border-radius: 20px 0 0 20px;
+    padding: 10px;
+}
+
+input[type="text"]{
+    width: 300px;
+}
+
+select:focus, input:focus, button:focus{
+    outline: none;
+}
+
+.search-btn{
+    border-radius: 0 20px 20px 0;
+    border: none;
+    background-color: white;
+    padding: 10px;
+}
+
+
+.random-btn{
+    border-radius: 20px;
+    border: none;
+    background-color: white;
+    padding: 10px 15px;
+    margin-left: 30px;
+}
+
+
+
+.meals {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.meal{
+    cursor: pointer;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    
+
+}
+
+.meal img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* border: 2px solid rgba(204, 204, 204, 0.678); */
+}
+
+.meal-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(24, 24, 24, 0.541);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease-in;
+    opacity: 0;
+}
+
+.meal:hover .meal-info{
+    opacity: 1;
+}
+
+
+.single-meal{
+    margin: 30px auto;
+    width: 70%;
+}
+
+.single-meal img{
+    width: 400px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.single-meal-info{
+    margin: 20px;
+    padding:10px;
+    border: 2px rgb(253, 108, 108) double;
+    border-radius: 10px ;
+}
+
+.single-meal p{
+    margin: 0;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.single-meal ul{
+    padding-left: 0;
+    list-style: none;
+}
+
+.single-meal ul li{
+    border: 1px solid rgb(253, 108, 108);
+    border-radius: 10px;
+    background-color: white;
+    display: inline-block;
+    color: rgb(0, 19, 82);
+    font-style: 14px;
+    font-weight: bold;
+    padding: 5px ;
+    margin: 5px;
+}
+
+@media (max-width: 800px){
+    .meals{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px){
+    .meals{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .meal{
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@media (max-width: 500px){
+    .meals{
+        grid-template-columns: 1fr;
+    }
+    .meal{
+        height: 300px;
+        width: 300px;
+    }
+}
+
